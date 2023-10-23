@@ -6,18 +6,18 @@ Raw images are generated from user-supplied text descriptions using
 the OpenAI API and the DALL-E model. The project also has a front-end interface
 built with React, allowing users to easily create their own images.
 
+
+<p>
+<img src="images/homepage.png"/> 
+</p>
+
+
 ## Tech Stack
 
 **Client:** React JS, Vite JS, TailwindCSS, PostCSS
 
 **Server:** Node JS, Express JS, MongooseJS, Cloudinary, Open AI
 
-
-## Screenshots
-
-<p>
-<img src="images/homepage.jpg"/> 
-</p>
 
 ## Setup & Installation
 
