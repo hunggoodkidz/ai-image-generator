@@ -21,6 +21,8 @@ built with React, allowing users to easily create their own images.
 
 ## Setup & Installation
 
+- Execute command in 'cd' into server and client do 'npm install' 
+
 - Create ENV File in Server folder
 
 ```bash
