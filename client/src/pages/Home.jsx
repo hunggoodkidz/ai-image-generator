@@ -73,7 +73,7 @@ const Home = () => {
 
             </h1>
             <p className='mt-2 text-[#666e75] text-[14px] max-w[500px]'>
-            Ey zo mo da phắc cơ
+            Đây là nơi trưng bày các hình ảnh AI của cộng đồng Lắc Image
 
             </p>
           </div>

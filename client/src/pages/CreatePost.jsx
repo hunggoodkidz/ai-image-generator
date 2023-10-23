@@ -16,12 +16,21 @@ const CreatePost = () => {
 
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
+  
+  const handleChange = (e) =>{
+    setForm({...form, [e.target.name]: e.target.value})
 
+  }
+  const handleSurpriseMe = () =>{
+      const randomPrompt = getRandomPrompt(form.prompt);
+      setForm({...form, prompt: randomPrompt });
+
+  }
   const generateImage = async () =>{
     if(form.prompt){
       try {
         setGeneratingImg(true);
-        const response = await fetch('http://127.0.0.1:8090/api/v1/dalle',{
+        const response = await fetch("http://127.0.0.1:8090/api/v1/dalle",{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -70,25 +79,17 @@ const CreatePost = () => {
       alert('Please enter a prompt and generate an image')
     }
   }
-  const handleChange = (e) =>{
-    setForm({...form, [e.target.name]: e.target.value})
 
-  }
-  const handleSurpriseMe = () =>{
-      const randomPrompt = getRandomPrompt(form.prompt);
-      setForm({...form, prompt: randomPrompt });
-
-  }
 
 
   return (
     <section className='max-w-7xl mx-auto'>
       <div>
-        <h1 className='font-extrabold text-[#222328] text-[32px]'>Create
+        <h1 className='font-extrabold text-[#222328] text-[32px]'>Tạo hình ảnh
 
         </h1>
         <p className='mt-2 text-[#666e75] text-[14px] max-w[500px]'>
-            Khởi tạo ra cái hình chúng mày thích đê
+            Khởi tạo ra hình ảnh mà bạn muốn
 
         </p>
       </div>
@@ -99,7 +100,7 @@ const CreatePost = () => {
             labelName = "Your name | Kimi no nawa"
             type="text"
             name="name"
-            placeholder="Đặt tên vào nhanh ?"
+            placeholder="Đặt tên Username chủ sở hữu của bạn"
             value={form.name}
             handleChange = {handleChange}
           />
@@ -107,7 +108,7 @@ const CreatePost = () => {
             labelName = "Nội dung"
             type="text"
             name="prompt"
-            placeholder="Con cừu"
+            placeholder="Tình yêu"
             value={form.prompt}
             handleChange = {handleChange}
             isSurpriseMe
